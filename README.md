@@ -4,7 +4,7 @@ _NOTE: This is an example based on the alternative project as if submitted for t
 
 ## Game 
 
-**Dino Hanyman: Spanner in the Works** 
+**Dino Hanyman: The Crowned Thief** 
 
 A two-level platformer prototype developed as an alternative trunk project to extend for CMP105 students from 2026 onwards. This project has most of the base requirements for a group submission. In the first level, the player has to navigate to the far right-side of the screen, avoiding pitfalls, and activate a lever before returning to the start. In the second level the player must investigate the high wall, backtrack to a box and jump into it from below to reveal a coin, colliding with the coin grants the ability to double-jump, using which they can navigate to the end of the level.
 
@@ -16,8 +16,7 @@ WASD to move,
 Spacebar to jump,
 F to interact (prompts will appear when possible),
 R to reset (if you get stuck or fall down)
-P to pause,
-L-Control to dash,
+ESC to pause,
 left mouseclick in the menu.
 
 ***Extension suggestions***
@@ -36,11 +35,11 @@ In addition to the proposal laid out below, there are several features which cou
 
 ## Student Details
 
-**Student Name:** William Kavanagh
+**Student Name:** Pawel Zybura
 
-**Student Number:** 0000001
+**Student Number:** 2501632
 
-**Course:** _CGAD_ / _CGT_ I am of both courses, and of none.
+**Course:** CGAD
 
 ---
 ---
@@ -49,32 +48,34 @@ In addition to the proposal laid out below, there are several features which cou
 
 ## Brief Overview of game 
 
-Dino Handyman: Spanner in the Works, will be a single-level metroidvania platformer where the play controls a small dinosaur. To begin with they will be able to jump, as the game progresses they will gain three skills -- dashing, double-jumping and attacking, in order to complete the game. The level will be setup so that progress is only possible with each ability, e.g., to cross the largest gap you will need to double-jump and to dash. The player will be timed while completing the level and at the end of the game, if they complete it without dying, they will be shown their time alongside the best time achieved. Additional levels could be created later thanks to the use of a data-driven level loading system which is used as the tilemap for the game. 
+Dino Handyman: The Crowned Thief, will be a two maybe three level metroidvania platformer where the player controls a small dinosaur with the goal of stealing the king's crown. For each checkpoint the player reaches they will get a coin they can use in the shop to buy an ability between Double Jump, Fireball, or Tailwhip, in order to complete the game. The level will be setup so that progress is possible with any ability which is why they can buy whichever one they want, e.g., a wall in the way can be double jumped over, destroyed with a fireball or grappled on top with the tail. At the end of the game I want to make a cutscene will play with options and regardless of the option the player will end up with a crown although in different ways, if I have time. The player will be timed while completing the level and at the end of the game, they will be shown their time and death count alongside the best time achieved.
 
 ## Must Have Features
 
-* Spanner Throwing: The player will be able to press 'r' to throw a spanner in the direction they are facing with a slight arc before it falls to the ground. 
+* Abilities: These abilities will help the progress the game and reach the end.
 
-* Enemies: Gremlins will be in certain parts of the level and will move towards a player if they are in range. On collision with the player the level will be reset on collision with a spanner they will despawn.
+* Shop System: to buy the abilities so that the player doesn't have access to all of the right away.
+
+* Enemies: Knights will be in certain parts of the level and will side to side On collision with the player the level will be reset on collision with an ability they will despawn.
 
 ## Should Have Features
 
 * Data-driven Level Loading: To create a level large enough to introduce the new mechanics without making the code a mess. 
 
-* Lives and Losing: The play will only have a three lives. If they fall off a platform or hit an enemyn they will lose one life and if they get to zero lives they will see a game over screen.
+* Pausing: The game will be able to be paused with a simple transparent overlay. Shop will preferably be available from here.
 
-* Pausing: The game will be able to be paused with a simple transparent overlay. Music will be paused similarly and resumed when play continues.
+* Score: showing this attempts score and highscore at the end of the game.
 
 ## Could Have Features
 
-* Leaderboard: The speed with which a player completes the level will be written to file and then displayed once the level is completed.
+* Checkpoints: Not just a place to get coins but actually respawn too.
 
-* A Heads-up Display: Showing the time taken so far, the dash, wrench and double-jump cooldowns and the number of lives remaining will be shown fixed to the screen.
+* A Heads-up Display: Showing the time taken so far, ability cooldowns and the number of deaths will be shown fixed to the screen.
 
-* Gremlin Animations: The gremlins will have different animation cycles including walking, running, idle, and attacking, for various actions they can be performing. 
+* Option: option at the end of the game that gives different endings.
 
 ## Wish to Have Features
 
-* Checkpoints: There will be positions in the level where the player can restart from if they lose a life, should they have got far enough. These will be placed where the player gets new abilities.
+* Different Level types: diferent tile sets to show different environments.
 
 * Coyote Time: The platforming will be enhanced by coyote time, a grace period during which the player can still jump even if they are not on a platform. 
