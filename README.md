@@ -4,7 +4,7 @@ _NOTE: This is an example based on the alternative project as if submitted for t
 
 ## Game 
 
-**Dino Hanyman: The Crowned Thief** 
+**Dino Hanyman: The Crown Thief** 
 
 A two-level platformer prototype developed as an alternative trunk project to extend for CMP105 students from 2026 onwards. This project has most of the base requirements for a group submission. In the first level, the player has to navigate to the far right-side of the screen, avoiding pitfalls, and activate a lever before returning to the start. In the second level the player must investigate the high wall, backtrack to a box and jump into it from below to reveal a coin, colliding with the coin grants the ability to double-jump, using which they can navigate to the end of the level.
 
@@ -48,7 +48,7 @@ In addition to the proposal laid out below, there are several features which cou
 
 ## Brief Overview of game 
 
-Dino Handyman: The Crowned Thief, will be a two maybe three level metroidvania platformer where the player controls a small dinosaur with the goal of stealing the king's crown. For each checkpoint the player reaches they will get a coin they can use in the shop to buy an ability between Double Jump, Fireball, or Tailwhip, in order to complete the game. The level will be setup so that progress is possible with any ability which is why they can buy whichever one they want, e.g., a wall in the way can be double jumped over, destroyed with a fireball or grappled on top with the tail. The player will be timed while completing the level and at the end of the game, they will be shown their time and death count alongside the best time achieved.
+Dino Handyman: The Crown Thief, will be a two maybe three level metroidvania platformer where the player controls a small dinosaur with the goal of stealing the king's crown. For each checkpoint the player reaches they will get a coin they can use in the shop to buy an ability between Double Jump, Fireball, or Tailwhip, in order to complete the game. The level will be setup so that progress is possible with any ability which is why they can buy whichever one they want, e.g., a wall in the way can be double jumped over, destroyed with a fireball or grappled on top with the tail. The player will be timed while completing the level and at the end of the game, they will be shown their time and death count alongside the best time achieved.
 
 ## Must Have Features
 
