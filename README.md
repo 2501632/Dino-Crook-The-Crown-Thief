@@ -48,7 +48,7 @@ In addition to the proposal laid out below, there are several features which cou
 
 ## Brief Overview of game 
 
-Dino Handyman: The Crowned Thief, will be a two maybe three level metroidvania platformer where the player controls a small dinosaur with the goal of stealing the king's crown. For each checkpoint the player reaches they will get a coin they can use in the shop to buy an ability between Double Jump, Fireball, or Tailwhip, in order to complete the game. The level will be setup so that progress is possible with any ability which is why they can buy whichever one they want, e.g., a wall in the way can be double jumped over, destroyed with a fireball or grappled on top with the tail. At the end of the game I want to make a cutscene will play with options and regardless of the option the player will end up with a crown although in different ways, if I have time. The player will be timed while completing the level and at the end of the game, they will be shown their time and death count alongside the best time achieved.
+Dino Handyman: The Crowned Thief, will be a two maybe three level metroidvania platformer where the player controls a small dinosaur with the goal of stealing the king's crown. For each checkpoint the player reaches they will get a coin they can use in the shop to buy an ability between Double Jump, Fireball, or Tailwhip, in order to complete the game. The level will be setup so that progress is possible with any ability which is why they can buy whichever one they want, e.g., a wall in the way can be double jumped over, destroyed with a fireball or grappled on top with the tail. The player will be timed while completing the level and at the end of the game, they will be shown their time and death count alongside the best time achieved.
 
 ## Must Have Features
 
@@ -71,8 +71,6 @@ Dino Handyman: The Crowned Thief, will be a two maybe three level metroidvania p
 * Checkpoints: Not just a place to get coins but actually respawn too.
 
 * A Heads-up Display: Showing the time taken so far, ability cooldowns and the number of deaths will be shown fixed to the screen.
-
-* Option: option at the end of the game that gives different endings.
 
 ## Wish to Have Features
 
