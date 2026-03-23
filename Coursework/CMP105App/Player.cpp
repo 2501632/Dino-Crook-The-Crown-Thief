@@ -33,9 +33,9 @@ void Player::handleInput(float dt)
 	m_accel = { 0,0 };
 
 	if (m_input->isKeyDown(sf::Keyboard::Scancode::A))
-		m_accel.x -= SPEED;
+		m_accel.x = -SPEED;
 	if (m_input->isKeyDown(sf::Keyboard::Scancode::D))
-		m_accel.x += SPEED;
+		m_accel.x = SPEED;
 	if (m_input->isPressed(sf::Keyboard::Scancode::Space) && m_isGrounded)
 	{
 		m_velocity.y = - JUMP_FORCE;
@@ -53,13 +53,13 @@ void Player::handleInput(float dt)
 		setPosition({ 50,0 });
 		m_velocity = { 0,0 };
 	}
-	if (m_input->isPressed(sf::Keyboard::Scancode::LControl) && m_sprintTimer <= 0)
+	if (m_input->isPressed(sf::Keyboard::Scancode::LShift) && m_sprintTimer <= 0)
 	{
 		if (!m_currAnim->getFlipped())
-			m_velocity.x = SPEED * SPRINT_SPEED_MULT;
+			move({ SPEED * FLASH_STEP_SPEED_MULT, 0.f });
 		else
-			m_velocity.x = -SPEED * SPRINT_SPEED_MULT;
-		m_sprintTimer = SPRINT_COOLDOWN;
+			move({ -SPEED * FLASH_STEP_SPEED_MULT, 0.f });
+		m_sprintTimer = FLASH_STEP_COOLDOWN;
 	}
 	if (m_input->isPressed(sf::Keyboard::Scancode::F))
 	{
@@ -86,10 +86,13 @@ void Player::update(float dt)
 {
 	// newtonian model
 	m_accel.y += GRAVITY;
-	m_velocity += dt * m_accel;
+	m_velocity.y += dt * m_accel.y;
+	m_velocity.x = m_accel.x * dt;
 	if (m_isGrounded && abs(m_accel.x) < 1.f) m_velocity *= DRAG_FACTOR;
 	else if (!m_isGrounded) m_velocity *= AIR_DRAG_FACTOR;
 	else if (m_accel.x * m_velocity.x < 0) m_velocity *= TURN_DRAG;
+
+
 
 	m_isGrounded = false;	// every frame we are falling unless proved otherwise by floor collision
 
@@ -99,8 +102,8 @@ void Player::update(float dt)
 	float speed = std::abs(m_velocity.x);	// sideways speed
 	if (speed < 1.0)
 		m_currAnim = &m_idle;
-	else if (speed > SPRINT_ANIM_THRESHOLD)
-		m_currAnim = &m_sprint;
+	//else if (speed > SPRINT_ANIM_THRESHOLD)\\
+		//m_currAnim = &m_sprint;\\
 	else
 		m_currAnim = &m_walk;
 
