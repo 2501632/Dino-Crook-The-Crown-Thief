@@ -151,8 +151,8 @@ void LevelTwoWithTiles::handleInput(float dt)
 
 	// if I press F on the flag  / I press escape.
 	if (((m_flag.getPosition() - m_player.getPosition()).length() < 75 &&
-		m_input.isPressed(sf::Keyboard::Scancode::F)) ||
-		m_input.isPressed(sf::Keyboard::Scancode::Escape))
+		m_input.isPressed(sf::Keyboard::Scancode::F)) /* ||
+		m_input.isPressed(sf::Keyboard::Scancode::Escape)*/)
 	{
 		// return to menu.
 		m_gameState.setCurrentState(State::MENU);

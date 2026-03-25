@@ -27,7 +27,7 @@ Menu::Menu(sf::RenderWindow& hwnd, Input& in, GameState& gs, AudioManager& aud) 
 
 	if (!m_titleSplash.loadFromFile("gfx/title_splash.png")) std::cerr << "no splash found";
 	m_titleImage.setTexture(&m_titleSplash);
-	m_titleImage.setSize({ 432,432 });
+	m_titleImage.setSize({ 432, 432 });
 }
 
 void Menu::handleInput(float dt)
