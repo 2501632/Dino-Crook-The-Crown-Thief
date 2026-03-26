@@ -46,14 +46,14 @@ private:
     AudioManager* m_audio;
 
     const float FLASH_STEP_COOLDOWN = 2.0f;
-    const float FLASH_STEP_SPEED_MULT = 2.f;
-    const float SPEED = 250.0f;
+    const float FLASH_STEP_SPEED_MULT = 1.6f;
+    const float SPEED = 300.0f;
     const float GRAVITY = 50.0f;
     const float COEFF_OF_REST = 0.8f;
     const float DRAG_FACTOR = 0.9f;
     const float AIR_DRAG_FACTOR = 0.99f;
     const float TURN_DRAG = 0.6f;       // allow snappy decel for turning
-    const float JUMP_FORCE = 22.0f;
+    const float JUMP_FORCE = 20.0f;
     //const float SPRINT_ANIM_THRESHOLD = 1.2f * SPEED;
     const float ACTIVATE_RANGE_SQUARED = 700.0f;
 

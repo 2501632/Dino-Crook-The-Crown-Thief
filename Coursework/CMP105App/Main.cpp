@@ -13,6 +13,7 @@
 #include "Framework/GameState.h"
 #include "LevelWithTiles.h"
 #include "LevelTwoWithTiles.h"
+#include "Pause.h"
 
 #ifndef SFML_VERSION_MAJOR
 	#error "SFML 3 is required for this framework."
@@ -33,6 +34,7 @@ void windowProcess(sf::RenderWindow& window, Input& in)
 			sf::FloatRect visibleArea(sf::Vector2f(0.f, 0.f), sf::Vector2f(resized->size));
 			window.setView(sf::View(visibleArea));
 		}
+
 		if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
 		{
 			in.setKeyDown(keyPressed->scancode);
@@ -93,6 +95,7 @@ int main()
 	Menu menu(window, input, gameState, audioManager);
 	LevelWithTiles tile_level(window, input, gameState, audioManager);
 	LevelTwoWithTiles tile_level_two(window, input, gameState, audioManager);
+	Pause pause(window, input, gameState, audioManager);
 	Scene* currentScene = &menu;
 
 	// Initialise objects for delta time
@@ -106,7 +109,9 @@ int main()
 	{
 		{State::MENU, &menu},
 		{State::LEVELONE, &tile_level},
-		{State::LEVELTWO, &tile_level_two}
+		{State::LEVELTWO, &tile_level_two},
+		{State::PAUSE, &pause}
+	
 	};
 	
 	// Game Loop

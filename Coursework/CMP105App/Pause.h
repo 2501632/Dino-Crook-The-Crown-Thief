@@ -1,13 +1,17 @@
 #pragma once
 #include "Framework/GameObject.h"
+#include "Scene.h"
 #include <iostream>
 
-class Pause : public GameObject
+class Pause : public Scene
 {
 public:
-	Pause();
+	Pause(sf::RenderWindow& window, Input& input, GameState& gameState, AudioManager& aud);
 	void handleInput(float dt) override;
 	void update(float dt) override;
+	void render() override;
+	void onBegin() override;
+	void onEnd() override;
 
 private:
 	sf::RectangleShape m_PauseScreenBackground;
@@ -18,7 +22,6 @@ private:
 	sf::Text m_RBText;
 	sf::Text m_SBText;
 	sf::Text m_QBText;
-	bool isPaused = false;
 	
 
 	sf::Color m_DefaultButtonColor = sf::Color(163, 140, 29);
