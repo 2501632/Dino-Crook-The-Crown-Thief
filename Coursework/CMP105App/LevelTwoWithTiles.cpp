@@ -156,9 +156,6 @@ void LevelTwoWithTiles::handleInput(float dt)
 		// return to menu.
 		m_gameState.setCurrentState(State::MENU);
 	}
-
-	if (m_input.isPressed(sf::Keyboard::Scancode::Escape))
-	{m_gameState.setCurrentState(State::PAUSE);}
 }
 
 void LevelTwoWithTiles::update(float dt)
@@ -213,6 +210,24 @@ void LevelTwoWithTiles::update(float dt)
 		m_player.reset();
 		m_audio.playSoundbyName("death");
 	}
+
+
+	/*if (m_input.isPressed(sf::Keyboard::Scancode::Escape))
+	{
+		sf::View worldView = m_window.getView();
+
+		if (!isPaused)
+		{
+			isPaused = true;
+			m_window.setView(m_window.getDefaultView());
+			m_pause.drawBackground();
+		}
+		else if (isPaused)
+		{
+			m_window.setView(worldView);
+			isPaused = false;
+		}
+	}*/
 
 	updateCameraAndBackground();
 	checkAndSetMessages();
@@ -278,6 +293,8 @@ void LevelTwoWithTiles::checkAndSetMessages()
 void LevelTwoWithTiles::render()
 {
 	beginDraw();
+	
+	
 	m_bgtilemap.render(m_window);
 	m_tilemap.render(m_window);
 	if (m_boopBlock.isAlive()) m_window.draw(m_boopBlock);
@@ -285,5 +302,10 @@ void LevelTwoWithTiles::render()
 	m_window.draw(m_player);
 	if (m_coin.isAlive()) m_window.draw(m_coin);
 	m_window.draw(m_alertText);
+	if (isPaused == true)
+	{
+		std::cout << isPaused;
+		m_window.draw(m_pause);
+	}
 	endDraw();
 }

@@ -124,9 +124,6 @@ LevelWithTiles::LevelWithTiles(sf::RenderWindow& window, Input& input, GameState
 void LevelWithTiles::handleInput(float dt)
 {
 	m_player.handleInput(dt);
-
-	if (m_input.isPressed(sf::Keyboard::Scancode::Escape))
-		m_gameState.setCurrentState(State::PAUSE);
 }
 
 void LevelWithTiles::update(float dt)

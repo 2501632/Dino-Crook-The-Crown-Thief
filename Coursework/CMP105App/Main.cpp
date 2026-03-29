@@ -13,12 +13,12 @@
 #include "Framework/GameState.h"
 #include "LevelWithTiles.h"
 #include "LevelTwoWithTiles.h"
-#include "Pause.h"
 
 #ifndef SFML_VERSION_MAJOR
 	#error "SFML 3 is required for this framework."
 #endif
 
+//I won't be able to do any work over easter break since I'll spend it in England at home.
 
 void windowProcess(sf::RenderWindow& window, Input& in)
 {
@@ -95,7 +95,6 @@ int main()
 	Menu menu(window, input, gameState, audioManager);
 	LevelWithTiles tile_level(window, input, gameState, audioManager);
 	LevelTwoWithTiles tile_level_two(window, input, gameState, audioManager);
-	Pause pause(window, input, gameState, audioManager);
 	Scene* currentScene = &menu;
 
 	// Initialise objects for delta time
@@ -110,7 +109,6 @@ int main()
 		{State::MENU, &menu},
 		{State::LEVELONE, &tile_level},
 		{State::LEVELTWO, &tile_level_two},
-		{State::PAUSE, &pause}
 	
 	};
 	

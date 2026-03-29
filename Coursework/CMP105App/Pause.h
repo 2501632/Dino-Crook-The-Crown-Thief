@@ -1,17 +1,13 @@
 #pragma once
 #include "Framework/GameObject.h"
-#include "Scene.h"
-#include <iostream>
 
-class Pause : public Scene
+class Pause : public GameObject
 {
 public:
-	Pause(sf::RenderWindow& window, Input& input, GameState& gameState, AudioManager& aud);
+	Pause();
 	void handleInput(float dt) override;
 	void update(float dt) override;
-	void render() override;
-	void onBegin() override;
-	void onEnd() override;
+	void drawBackground();
 
 private:
 	sf::RectangleShape m_PauseScreenBackground;

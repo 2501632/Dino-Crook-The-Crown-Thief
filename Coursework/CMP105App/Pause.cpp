@@ -1,19 +1,17 @@
 #include "Pause.h"
 
 
-Pause::Pause(sf::RenderWindow& window, Input& input, GameState& gameState, AudioManager& aud) : Scene(window, input, gameState, aud), 
-m_RBText(m_Font), m_SBText(m_Font), m_QBText(m_Font)
+Pause::Pause() : m_RBText(m_Font), m_SBText(m_Font), m_QBText(m_Font)
 {
-	m_PauseScreenBackground.setFillColor(sf::Color(212, 191, 89));
-	m_PauseScreenBackground.setSize({ static_cast<float>(m_window.getSize().x) / 1.5f, static_cast<float>(m_window.getSize().y) / 1.5f});
-	m_PauseScreenBackground.setPosition({ static_cast<float>(m_window.getSize().x) / 3, static_cast<float>(m_window.getSize().y) / 3 });
+	m_PauseScreenBackground.setFillColor(sf::Color(189, 165, 47));
+	m_PauseScreenBackground.setSize({ 300, 400});
+	m_PauseScreenBackground.setPosition({ 50, 50});
 }
 
 void Pause::handleInput(float dt) {}
 
 void Pause::update(float dt)
 {
-
 	/*
 	* WK WRITES A BLOCK COMMENT
 	* 
@@ -23,29 +21,11 @@ void Pause::update(float dt)
 	* 4. reset the view to the variable we stored as part of step (1)
 	* 
 	*/
-
-
-
-
-
-
-
-	if (m_input.isPressed(sf::Keyboard::Scancode::Escape))
-		m_gameState.setCurrentState(State::LEVELTWO);
-
-
 }
 
-void Pause::onBegin() {}
-
-void Pause::onEnd() {}
-
-void Pause::render() 
+void Pause::drawBackground()
 {
-	beginDraw();
-
-	m_window.draw(m_PauseScreenBackground);
-
-	endDraw();
+	m_PauseScreenBackground.setFillColor(sf::Color(189, 165, 47));
+	m_PauseScreenBackground.setSize({ 300, 400 });
+	m_PauseScreenBackground.setPosition({ 50, 50 });
 }
-

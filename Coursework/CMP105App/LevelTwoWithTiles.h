@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Coin.h"
 #include "Flag.h"
+#include "Pause.h"
 #include <algorithm> // for clamp
 
 
@@ -19,6 +20,7 @@ public:
     void render() override;
     void onBegin() override;
     void onEnd() override;
+    bool getPaused() { return isPaused; }
 
 private:
     void updateCameraAndBackground();
@@ -27,6 +29,7 @@ private:
     TileMap m_tilemap;
     TileMap m_bgtilemap;
     Player m_player;
+    Pause m_pause;
 
     Coin m_coin;
     GameObject m_boopBlock;
@@ -34,6 +37,8 @@ private:
 
     const sf::Vector2i WORLD_SIZE = { 2880, 648 };
     const sf::Vector2i VIEW_SIZE = { 432, 432 };
+
+    bool isPaused = false;
 
     sf::Text m_alertText;
     sf::Font m_font;

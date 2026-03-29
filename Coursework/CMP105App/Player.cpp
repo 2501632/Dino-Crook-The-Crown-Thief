@@ -38,13 +38,13 @@ void Player::handleInput(float dt)
 		m_accel.x = SPEED;
 	if (m_input->isPressed(sf::Keyboard::Scancode::Space) && m_isGrounded)
 	{
-		m_velocity.y = - JUMP_FORCE;
+		m_velocity.y = -JUMP_FORCE;
 		m_isGrounded = false;	// can't be jumping if we're in the air
 		m_audio->playSoundbyName("jump");
 	}
 	else if (m_input->isPressed(sf::Keyboard::Scancode::Space) && !m_isGrounded && m_canDoubleJump && !m_hasDoubleJumped)
 	{
-		m_velocity.y = - JUMP_FORCE;
+		m_velocity.y = -JUMP_FORCE;
 		m_hasDoubleJumped = true;
 		m_audio->playSoundbyName("jump");
 	}
