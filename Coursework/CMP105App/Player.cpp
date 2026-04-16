@@ -25,6 +25,8 @@ Player::Player()
 
 	setCollisionBox({ {12,12}, { 45,51 } });
 
+	ability.getFireball();
+
 	m_isGrounded = false;
 }
 
@@ -72,6 +74,12 @@ void Player::handleInput(float dt)
 		{
 			m_gameEndTriggered = true;
 		}
+	}
+
+	if (m_input->isLeftMousePressed())
+	{
+		ability.Fireball(dt, getPosition());
+		std::cout << "click";
 	}
 
 	// for debugging: "Where am I?"
@@ -181,3 +189,5 @@ void Player::reset()
 	m_leverPulled = false;
 	m_gameEndTriggered = false;
 }
+
+
