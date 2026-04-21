@@ -2,7 +2,7 @@
 	
 	Fireball::Fireball()
 	{
-		fireball.setFillColor(sf::Color::Red);
-		fireball.setRadius(20.f);
+		setFillColor(sf::Color::Red);
+		setRadius(20.f);
 	}
 

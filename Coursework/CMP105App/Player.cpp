@@ -78,8 +78,8 @@ void Player::handleInput(float dt)
 	if (m_input->isLeftMousePressed())
 	{
 		//player.cpp handle input
-		fireball.setPosition({ getPosition().x + 10, getPosition().y / 2 });
-		fireball.move({ 200 * dt, 0.f });
+		fireball.setPosition({ getPosition().x + 10, getPosition().y });
+		m_fireballShot = true;
 		std::cout << "click ";
 	}
 
@@ -94,6 +94,8 @@ void Player::handleInput(float dt)
 void Player::update(float dt)
 {
 	std::cout << fireball.getPosition().x << " ";
+
+	if (m_fireballShot) { fireball.move({ 200 * dt, 0.f }); };
 
 	// newtonian model
 	m_accel.y += GRAVITY;

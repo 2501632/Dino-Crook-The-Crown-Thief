@@ -26,6 +26,7 @@ public:
     void setCanDoubleJump(bool value) { m_canDoubleJump = value; };
     bool canDoubleJump() { return m_canDoubleJump; };
     void setAudio(AudioManager* audio) { m_audio = audio; };
+    Fireball fireball;
 
 private:
     sf::Texture m_dinoTexture;
@@ -44,8 +45,9 @@ private:
     bool m_gameEndTriggered = false;
     bool m_canDoubleJump;
     bool m_hasDoubleJumped;
+    bool m_fireballShot = false;
     AudioManager* m_audio;
-    Fireball fireball;
+    
     //player.h
 
     const float FLASH_STEP_COOLDOWN = 2.0f;

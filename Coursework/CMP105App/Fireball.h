@@ -1,12 +1,12 @@
 #pragma once
 #include "Framework/GameObject.h"
 
-class Fireball : public GameObject
+class Fireball : public sf::CircleShape
 {
 private:
-	sf::CircleShape fireball;
 
 public:
 	Fireball();
+	
 };
 

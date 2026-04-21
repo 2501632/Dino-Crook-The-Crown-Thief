@@ -123,7 +123,6 @@ LevelTwoWithTiles::LevelTwoWithTiles(sf::RenderWindow& window, Input& input, Gam
 	m_alertText.setPosition({ 50, 150 });
 	m_alertText.setCharacterSize(36);
 	m_alertText.setFillColor(sf::Color::Black);
-
 }
 
 void LevelTwoWithTiles::onBegin()
@@ -162,6 +161,8 @@ void LevelTwoWithTiles::update(float dt)
 	m_player.update(dt);
 	m_flag.update(dt);
 	if (m_coin.isAlive()) m_coin.update(dt);
+
+	m_player.fireball;
 
 	// handle collisions
 	std::vector<GameObject>& level = *m_tilemap.getLevel();
@@ -279,7 +280,7 @@ void LevelTwoWithTiles::render()
 	if (m_boopBlock.isAlive()) m_window.draw(m_boopBlock);
 	m_window.draw(m_flag);
 	m_window.draw(m_player);
-	m_window.draw(fireball);
+	m_window.draw(m_player.fireball);
 	if (m_coin.isAlive()) m_window.draw(m_coin);
 	m_window.draw(m_alertText);
 	endDraw();
