@@ -182,8 +182,8 @@ sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Abilities.cpp" />
     <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Fireball.cpp" />
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="Framework\Animation.cpp" />
     <ClCompile Include="Framework\AudioManager.cpp" />
@@ -203,8 +203,8 @@ sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Abilities.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="Fireball.h" />
     <ClInclude Include="Flag.h" />
     <ClInclude Include="Framework\Animation.h" />
     <ClInclude Include="Framework\AudioManager.h" />

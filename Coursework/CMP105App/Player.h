@@ -3,7 +3,7 @@
 #include "Framework/Animation.h"
 #include <iostream>
 #include "Framework/AudioManager.h"
-#include "Abilities.h"
+#include "Fireball.h"
 
 
 class Player :
@@ -26,7 +26,6 @@ public:
     void setCanDoubleJump(bool value) { m_canDoubleJump = value; };
     bool canDoubleJump() { return m_canDoubleJump; };
     void setAudio(AudioManager* audio) { m_audio = audio; };
-    Abilities getAbility();
 
 private:
     sf::Texture m_dinoTexture;
@@ -34,7 +33,6 @@ private:
     Animation m_idle;
     Animation m_walk;
     Animation m_sprint;
-    Abilities ability;
     sf::Vector2f m_accel;
     float m_sprintTimer = 0.f;
     bool m_isGrounded;
@@ -47,6 +45,8 @@ private:
     bool m_canDoubleJump;
     bool m_hasDoubleJumped;
     AudioManager* m_audio;
+    Fireball fireball;
+    //player.h
 
     const float FLASH_STEP_COOLDOWN = 2.0f;
     const float FLASH_STEP_SPEED_MULT = 2.5f;

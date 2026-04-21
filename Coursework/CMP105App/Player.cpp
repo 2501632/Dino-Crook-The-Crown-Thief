@@ -24,10 +24,9 @@ Player::Player()
 	m_sprint.setFrameSpeed(1.4 / 15.0f);
 
 	setCollisionBox({ {12,12}, { 45,51 } });
-
-	ability.getFireball();
-
 	m_isGrounded = false;
+
+
 }
 
 void Player::handleInput(float dt)
@@ -78,8 +77,10 @@ void Player::handleInput(float dt)
 
 	if (m_input->isLeftMousePressed())
 	{
-		ability.Fireball(dt, getPosition());
-		std::cout << "click";
+		//player.cpp handle input
+		fireball.setPosition({ getPosition().x + 10, getPosition().y / 2 });
+		fireball.move({ 200 * dt, 0.f });
+		std::cout << "click ";
 	}
 
 	// for debugging: "Where am I?"
@@ -92,6 +93,8 @@ void Player::handleInput(float dt)
 
 void Player::update(float dt)
 {
+	std::cout << fireball.getPosition().x << " ";
+
 	// newtonian model
 	m_accel.y += GRAVITY;
 	m_velocity.y += dt * m_accel.y;
@@ -99,8 +102,6 @@ void Player::update(float dt)
 	if (m_isGrounded && abs(m_accel.x) < 1.f) m_velocity *= DRAG_FACTOR;
 	else if (!m_isGrounded) m_velocity *= AIR_DRAG_FACTOR;
 	else if (m_accel.x * m_velocity.x < 0) m_velocity *= TURN_DRAG;
-
-
 
 	m_isGrounded = false;	// every frame we are falling unless proved otherwise by floor collision
 
@@ -189,5 +190,4 @@ void Player::reset()
 	m_leverPulled = false;
 	m_gameEndTriggered = false;
 }
-
 

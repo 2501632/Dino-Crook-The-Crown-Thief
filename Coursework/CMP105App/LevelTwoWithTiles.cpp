@@ -96,8 +96,6 @@ LevelTwoWithTiles::LevelTwoWithTiles(sf::RenderWindow& window, Input& input, Gam
 	m_player.setPosition({ 100, 100 });
 	m_player.setAudio(&m_audio);
 
-	ability.getFireball();
-
 	if (!m_font.openFromFile("font/bitcount.ttf")) std::cerr << "no font found";
 
 	// other bits
@@ -281,7 +279,7 @@ void LevelTwoWithTiles::render()
 	if (m_boopBlock.isAlive()) m_window.draw(m_boopBlock);
 	m_window.draw(m_flag);
 	m_window.draw(m_player);
-	//m_window.draw(ability);
+	m_window.draw(fireball);
 	if (m_coin.isAlive()) m_window.draw(m_coin);
 	m_window.draw(m_alertText);
 	endDraw();
