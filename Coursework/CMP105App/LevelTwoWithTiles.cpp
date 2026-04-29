@@ -159,7 +159,9 @@ void LevelTwoWithTiles::handleInput(float dt)
 
 	if (m_input.isPressed(sf::Keyboard::Scancode::Escape)) { m_isPaused = !m_isPaused; }
 
-	if (m_isPaused) { m_pause.setPosition(m_player.getPosition()); }
+	//if (m_isPaused) { m_pause.setPosition({ m_player.getPosition().x - 110, m_player.getPosition().y - 160 }); }
+	if (m_isPaused) { m_window.setView(m_window.getDefaultView()); m_pause.setPosition({ 70, 15 }); }
+	else { m_window.setView(worldView); }
 }
 
 void LevelTwoWithTiles::update(float dt)
@@ -308,6 +310,10 @@ void LevelTwoWithTiles::render()
 	m_window.draw(m_player);
 	if (m_coin.isAlive()) m_window.draw(m_coin);
 	m_window.draw(m_alertText);
-	if (m_isPaused) m_window.draw(m_pause);
+	if (m_isPaused)
+	{
+		m_window.draw(m_pause);
+		m_window.draw(m_pause.getResumeButton());
+	}
 	endDraw();
 }

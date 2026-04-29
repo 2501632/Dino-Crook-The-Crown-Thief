@@ -7,7 +7,7 @@ public:
 	Pause();
 	void handleInput(float dt) override;
 	void update(float dt) override;
-	void drawBackground();
+	GameObject getResumeButton() { return m_ResumeButton; }
 
 private:
 	sf::RectangleShape m_PauseScreenBackground;

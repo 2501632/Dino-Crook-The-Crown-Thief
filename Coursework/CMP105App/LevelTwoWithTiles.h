@@ -35,6 +35,8 @@ private:
     GameObject m_boopBlock;
     Flag m_flag;
 
+    sf::View worldView = m_window.getView();
+
     const sf::Vector2i WORLD_SIZE = { 2880, 648 };
     const sf::Vector2i VIEW_SIZE = { 432, 432 };
 

@@ -3,9 +3,12 @@
 
 Pause::Pause() : m_RBText(m_Font), m_SBText(m_Font), m_QBText(m_Font)
 {
-	m_PauseScreenBackground.setFillColor(sf::Color(189, 165, 47));
-	m_PauseScreenBackground.setSize({ 300, 400});
-	m_PauseScreenBackground.setPosition({ 50, 50});
+	setFillColor(sf::Color(189, 165, 47));
+	setSize({ 300, 400});
+
+	m_ResumeButton.setSize({ 200, 75 });
+	m_ResumeButton.setFillColor(m_DefaultButtonColor);
+	m_ResumeButton.setPosition({ 120, 50 });
 }
 
 void Pause::handleInput(float dt) {}
@@ -23,9 +26,3 @@ void Pause::update(float dt)
 	*/
 }
 
-void Pause::drawBackground()
-{
-	//m_PauseScreenBackground.setFillColor(sf::Color(189, 165, 47));
-	//m_PauseScreenBackground.setSize({ 300, 400 });
-	////m_PauseScreenBackground.setPosition({ 50, 50 });
-}
