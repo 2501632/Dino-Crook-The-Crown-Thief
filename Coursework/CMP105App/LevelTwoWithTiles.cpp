@@ -156,10 +156,16 @@ void LevelTwoWithTiles::handleInput(float dt)
 		// return to menu.
 		m_gameState.setCurrentState(State::MENU);
 	}
+
+	if (m_input.isPressed(sf::Keyboard::Scancode::Escape)) { m_isPaused = !m_isPaused; }
+
+	if (m_isPaused) { m_pause.setPosition(m_player.getPosition()); }
 }
 
 void LevelTwoWithTiles::update(float dt)
 {
+	if (m_isPaused) { return; }
+
 	m_player.update(dt);
 	m_flag.update(dt);
 	if (m_coin.isAlive()) m_coin.update(dt);
@@ -302,10 +308,6 @@ void LevelTwoWithTiles::render()
 	m_window.draw(m_player);
 	if (m_coin.isAlive()) m_window.draw(m_coin);
 	m_window.draw(m_alertText);
-	if (isPaused == true)
-	{
-		std::cout << isPaused;
-		m_window.draw(m_pause);
-	}
+	if (m_isPaused) m_window.draw(m_pause);
 	endDraw();
 }

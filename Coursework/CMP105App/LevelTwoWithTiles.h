@@ -20,7 +20,7 @@ public:
     void render() override;
     void onBegin() override;
     void onEnd() override;
-    bool getPaused() { return isPaused; }
+    bool getPaused() { return m_isPaused; }
 
 private:
     void updateCameraAndBackground();
@@ -38,7 +38,7 @@ private:
     const sf::Vector2i WORLD_SIZE = { 2880, 648 };
     const sf::Vector2i VIEW_SIZE = { 432, 432 };
 
-    bool isPaused = false;
+    bool m_isPaused = false;
 
     sf::Text m_alertText;
     sf::Font m_font;

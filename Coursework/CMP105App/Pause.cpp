@@ -25,7 +25,7 @@ void Pause::update(float dt)
 
 void Pause::drawBackground()
 {
-	m_PauseScreenBackground.setFillColor(sf::Color(189, 165, 47));
-	m_PauseScreenBackground.setSize({ 300, 400 });
-	m_PauseScreenBackground.setPosition({ 50, 50 });
+	//m_PauseScreenBackground.setFillColor(sf::Color(189, 165, 47));
+	//m_PauseScreenBackground.setSize({ 300, 400 });
+	////m_PauseScreenBackground.setPosition({ 50, 50 });
 }
